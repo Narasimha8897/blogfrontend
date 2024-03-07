@@ -1,0 +1,53 @@
+label,.card-header {
+    font-weight: bold;
+}
+.loadingSpinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.carousel-caption {
+    top: 50% !important;
+    z-index: 99999;
+}
+
+.carousel-caption .caption-button {
+    border-radius: 5px !important;
+    text-decoration: none !important;
+    background-color: rgba(255, 255, 255, 0.482) !important;
+    text-transform: capitalize !important;
+    padding: 10px 50px 10px 10px;
+    height: min-content;
+    font-weight: bold !important;
+    color: #0075be;
+    cursor: pointer !important;
+    align-items: center !important;
+    transition: 0.2s ease-in;
+    border: 2px solid #0075be;
+    width: auto;
+    font: normal normal bold 16px / 20px Open Sans;
+}
+.caption-button span {
+        display: inline-block;
+        transition: 0.6s ease-in;
+}
+.caption-button .arrow-btn-bg {
+    background: #F6821E;
+    border-radius: 8px;
+    margin-right: 16px;
+    padding: 4px 6px !important;
+}
+.carousel-caption .caption-button:hover, .carousel-caption .caption-button:focus {
+    background-color: #051e33 !important;
+    color: #fff;
+    border-color: #051e33 !important;
+}
+.carousel-caption .caption-button:hover span.arrow, .carousel-caption .caption-button:focus span.arrow {
+    transform: translateX(135px);
+}
+
+.post-image.card-img {
+    object-fit: cover !important;
+    max-height: 310px !important;
+}

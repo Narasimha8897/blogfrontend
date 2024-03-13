@@ -15,7 +15,7 @@ jobs:
             node-version: 18
 
         - name: Generate deployment package
-          run: zip -r deployblogpost.zip . -x '*.git*'
+          run: zip -r deployblogapplicationpost.zip . -x '*.git*'
 
         - name: Deploy to EB
           uses: einaregilsson/beanstalk-deploy@v21
@@ -24,8 +24,7 @@ jobs:
             aws_secret_key: ${{ secrets.AWS_ADMIN_SECRET_ACCESS_KEY_ID }}
             application_name: blogpostapplication
             environment_name: Blogpostapplication-env
-            version_label: ${{ github.sha }}
+            version_label: "app-${{ steps.format-time.outputs.replaced }}"
             use_existing_version_if_available: "true"
-            # existing_bucket_name: elasticbeanstalk-ap-south-1-940035950318
             region: ap-south-1
-            deployment_package: deployblogpost.zip
+            deployment_package: deployblogapplicationpost.zip

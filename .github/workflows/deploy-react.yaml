@@ -9,6 +9,10 @@ jobs:
         steps:
         - name: Checkout source code
           uses: actions/checkout@v2
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: 18
 
         - name: Generate deployment package
           run: zip -r deploypost.zip . -x '*.git*'

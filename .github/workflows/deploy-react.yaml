@@ -25,7 +25,6 @@ jobs:
             application_name: blogpostapplication
             environment_name: Blogpostapplication-env
             version_label: "sample"
-            existing_bucket_name: postapplication
             region: ap-south-1
             deployment_package: deployblogapppostthird.zip
             use_existing_version_if_available: "true"

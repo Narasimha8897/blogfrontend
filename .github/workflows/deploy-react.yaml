@@ -15,7 +15,7 @@ jobs:
             node-version: 18
 
         - name: Generate deployment package
-          run: zip -r deployblogapppostfirst.zip . -x '*.git*'
+          run: zip -r deployblogapppostsecond.zip . -x '*.git*'
 
         - name: Deploy to EB
           uses: einaregilsson/beanstalk-deploy@v18
@@ -27,4 +27,4 @@ jobs:
             version_label: "app-${{ steps.format-time.outputs.replaced }}"
             existing_bucket_name: postapplication
             region: ap-south-1
-            deployment_package: deployblogapppostfirst.zip
+            deployment_package: deployblogapppostsecond.zip

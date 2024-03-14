@@ -15,17 +15,16 @@ jobs:
             node-version: 18
 
         - name: Generate deployment package
-          run: zip -r deployblogapppost.zip . -x '*.git*'
+          run: zip -r deployblogapppostfirst.zip . -x '*.git*'
 
         - name: Deploy to EB
-          uses: einaregilsson/beanstalk-deploy@v21
+          uses: einaregilsson/beanstalk-deploy@v18
           with:
-            aws_access_key: ${{ secrets.AWS_ADMIN_ACCESS_KEY_ID }}
-            aws_secret_key: ${{ secrets.AWS_ADMIN_SECRET_ACCESS_KEY_ID }}
+            aws_access_key: "${{ secrets.AWS_ADMIN_ACCESS_KEY_ID }}"
+            aws_secret_key: "${{ secrets.AWS_ADMIN_SECRET_ACCESS_KEY_ID }}"
             application_name: blogpostapplication
             environment_name: Blogpostapplication-env
-            version_label: ${{ github.sha }}
-            use_existing_version_if_available: "true"
+            version_label: "app-${{ steps.format-time.outputs.replaced }}"
             existing_bucket_name: postapplication
             region: ap-south-1
-            deployment_package: deployblogapppost.zip
+            deployment_package: deployblogapppostfirst.zip

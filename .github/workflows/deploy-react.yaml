@@ -15,7 +15,7 @@ jobs:
             node-version: 18
 
         - name: Generate deployment package
-          run: zip -r deployblogapppostfifth.zip . -x '*.git*'
+          run: zip -r deployblogapppostsixth.zip . -x '*.git*'
 
         - name: Deploy to EB
           uses: einaregilsson/beanstalk-deploy@v18
@@ -25,7 +25,7 @@ jobs:
             application_name: blogpostweb
             environment_name: blogpostweb-env
             existing_bucket_name: "elasticbeanstalk-ap-south-1-940035950318"
-            version_label: "sampleapp"
+            version_label: "sampleappupdate"
             region: ap-south-1
-            deployment_package: deployblogapppostfifth.zip
+            deployment_package: deployblogapppostsixth.zip
             use_existing_version_if_available: "true"

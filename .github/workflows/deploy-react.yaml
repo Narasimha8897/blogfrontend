@@ -22,8 +22,8 @@ jobs:
           with:
             aws_access_key: "${{ secrets.AWS_ADMIN_ACCESS_KEY_ID }}"
             aws_secret_key: "${{ secrets.AWS_ADMIN_SECRET_ACCESS_KEY_ID }}"
-            application_name: blogpostweb
-            environment_name: blogpostweb-env
+            application_name: blogspostsapp
+            environment_name: blogspostsapp-env
             existing_bucket_name: "elasticbeanstalk-ap-south-1-940035950318"
             version_label: "sampleversion"
             region: ap-south-1

@@ -15,7 +15,7 @@ jobs:
             node-version: 18
 
         - name: Generate deployment package
-          run: zip -r deployappfive.zip . -x '*.git*'
+          run: zip -r deployappsix.zip . -x '*.git*'
 
         - name: Deploy to EB
           uses: einaregilsson/beanstalk-deploy@v18
@@ -27,5 +27,5 @@ jobs:
             existing_bucket_name: "elasticbeanstalk-ap-south-1-940035950318"
             version_label: "${{github.sha}}"
             region: ap-south-1
-            deployment_package: deployappfive.zip
+            deployment_package: deployappsix.zip
             use_existing_version_if_available: "true"
